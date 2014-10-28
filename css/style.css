@@ -521,7 +521,8 @@ body {
   clear: both;
 }
 .article-date {
-  float: left;
+  float: right;
+  line-height: initial;
 }
 .article-category {
   float: left;
@@ -811,15 +812,16 @@ a.article-title:hover {
 .article-nav-caption {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ddd;
+  color: color-theme;
   line-height: 1em;
   font-weight: bold;
+  font-size: 1.25em;
 }
 #article-nav-newer .article-nav-caption {
   margin-right: -2px;
 }
 .article-nav-title {
-  font-size: 0.85em;
+  font-size: 1em;
   line-height: 1.6em;
   margin-top: 0.5em;
 }
@@ -1320,6 +1322,8 @@ pre .javascript .function {
 .widget a {
   color: #258fb8;
   text-decoration: none;
+  display: inline-block;
+  margin-bottom: 5px;
 }
 .widget a:hover {
   text-decoration: underline;

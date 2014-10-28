@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS 重习选择器、权重、特指度、层叠规则 | Yi Qian - 1000</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="BAE上迁移啦。。。
+翻翻书，巩固基础都是好事，每次看一样的内容都有不一样的体验。基础知识虽然简单，但也容易混淆，做个汇总笔记总是好的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 重习选择器、权重、特指度、层叠规则">
+<meta property="og:url" content="http://chenhui5416.github.io/2014/05/01/bae/cn_hash_1402037310719/">
+<meta property="og:site_name" content="Yi Qian - 1000">
+<meta property="og:description" content="BAE上迁移啦。。。
+翻翻书，巩固基础都是好事，每次看一样的内容都有不一样的体验。基础知识虽然简单，但也容易混淆，做个汇总笔记总是好的。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS 重习选择器、权重、特指度、层叠规则">
+<meta name="twitter:description" content="BAE上迁移啦。。。
+翻翻书，巩固基础都是好事，每次看一样的内容都有不一样的体验。基础知识虽然简单，但也容易混淆，做个汇总笔记总是好的。">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Yi Qian - 1000</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://chenhui5416.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-bae/cn_hash_1402037310719" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS 重习选择器、权重、特指度、层叠规则
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>BAE上迁移啦。。。</p>
+<p>翻翻书，巩固基础都是好事，每次看一样的内容都有不一样的体验。基础知识虽然简单，但也容易混淆，做个汇总笔记总是好的。<br><a id="more"></a></p>
+<h4 id="选择器">选择器</h4>
+<blockquote>
+<ol>
+<li><p>元素选择器   <code>p {color: red}</code></p>
+</li>
+<li><p>类选择器 <code>.classname {color: red}</code></p>
+</li>
+<li><p>ID选择器 <code>#id {color: red}</code></p>
+</li>
+<li><p>属性选择器 <code>h1[attrName] {color: red}</code>、<code>h1[attrName=&quot;attrValue&quot;] {color: red}</code>、<code>h1[attrName~=&quot;attrValuePart&quot;] {color: red}</code>(根据部分属性值的选择)、<code>h1[attrName|=&quot;attrValueBegin&quot;] {color: red}</code></p>
+</li>
+<li><p>后代选择器<code>ancestor posterity {color: red}</code></p>
+</li>
+<li><p>直接后代选择器（子选择器） <code>father &gt; son {color: red}</code></p>
+</li>
+<li><p>兄弟选择器 <code>sibling1 + sibling2 {color: red}</code> (使用它，第一个子元素或者说兄弟中第一个永远不会被选择)</p>
+</li>
+<li><p>伪类选择器<code>:focuns</code> <code>:link</code> <code>:visited</code> <code>:hover</code> <code>:active</code> <code>:first-child</code> <code>:lang(languageType)</code> <code>:nth-child(NchildID)</code> <code>:last-child</code> <code>:first-letter</code> <code>:first-line</code> <code>:before {content: &#39;some&#39;}</code> <code>:after {content: &#39;some&#39;}</code></p>
+</li>
+<li><p>多类选择器 <code>.classOne.classTwo{color: red}</code>(无空格)</p>
+</li>
+</ol>
+</blockquote>
+<p>注，组合用逗号<code>,</code>隔开。 很多选择器不怎么用，所以很容易忘记，写着提醒自己，方便自己查阅。css3推荐 伪类用两个冒号。</p>
+<h4 id="样式来源">样式来源</h4>
+<blockquote>
+<ol>
+<li><p>用户声明的重要样式（加<code>!important</code>的）</p>
+</li>
+<li><p>作者声明的重要样式（加<code>!important</code>的）</p>
+</li>
+<li><p>作者声明的正常样式（不加<code>!important</code>的）</p>
+</li>
+</ol>
+<blockquote>
+<ol>
+<li><p>行内样式</p>
+</li>
+<li><p>嵌入样式</p>
+</li>
+<li><p>链接样式</p>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>用户声明的正常样式</p>
+</li>
+<li><p>浏览器样式</p>
+</li>
+</ol>
+</blockquote>
+<p>根据来源不同，优先选择更靠前的样式</p>
+<h4 id="样式的特指度（权重，特殊性）">样式的特指度（权重，特殊性）</h4>
+<p>当样式来源一致时，按照属性对应的特值度进行选择排序</p>
+<blockquote>
+<ol>
+<li><p>内联样式 <code>(1,0,0,0)</code></p>
+</li>
+<li><p>ID选择器 <code>(0,1,0,0)</code></p>
+</li>
+<li><p>类选择器 <code>(0,0,1,0)</code></p>
+</li>
+<li><p>元素选择器 <code>(0,0,0,1)</code></p>
+</li>
+<li><p>通配符选择器 <code>(0,0,0,0)</code></p>
+</li>
+</ol>
+</blockquote>
+<p>根据属性在那种选择器中出现，对应有几个加几个，然后对比特指度大小，选择特指度大的。</p>
+<p>注意： <code>(0,1,0,0)</code> 是大于<code>(0,1,13,0)</code>的以此类推，继承属性是没有特指度的，小于通配符选择器。</p>
+<p>另，后出现覆盖先出现同类</p>
+<h4 id="层叠规则">层叠规则</h4>
+<blockquote>
+<ol>
+<li><p>找到应用给每个元素和属性的所有声明</p>
+</li>
+<li><p>先按照样式来源排序!import</p>
+</li>
+<li><p>相同来源中，按照特指度排序</p>
+</li>
+</ol>
+</blockquote>
+<p>转载注明出处：<a href="http://chenhui5416.duapp.com" target="_blank" rel="external">chenhui5416.duapp.com</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+      <div class="article-meta">
+        <a href="/2014/05/01/bae/cn_hash_1402037310719/" class="article-date">
+  <time datetime="2014-05-01T12:22:20.000Z" itemprop="datePublished">2014-05-1</time>
+</a>
+      </div>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/05/01/bae/cn_hash_1399130092999/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          百度web前端上海暑期实习电面一
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/05/01/bae/cn_hash_1399964582328/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">百度web前端上海暑期实习电面三</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-bae/cn_hash_1402037310719" data-title="CSS 重习选择器、权重、特指度、层叠规则" data-url="http://chenhui5416.github.io/2014/05/01/bae/cn_hash_1402037310719/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'yiqian'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">文 章 分 类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习总结/">学习总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试/">面试</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标 签</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/GIT/" style="font-size: 10.00px;">GIT</a><a href="/tags/HTML/" style="font-size: 10.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 20.00px;">Javascript</a><a href="/tags/面筋/" style="font-size: 20.00px;">面筋</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近 期 文 章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/05/01/bae/cn_hash_1403581489352/">GIT 简单操作流程及笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/01/bae/cn_hash_1401419290967/">函数柯里化初探</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/01/bae/cn_hash_1399562093691/">JS闭包-作用域-垃圾回收机制</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/01/bae/cn_hash_1399774335780/">Function 类型笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/01/bae/cn_hash_1399547692999/">百度web前端上海暑期实习电面二</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+    &copy; 2014 <a href="http://weibo.com/u/1761093415" target="_blank">Yi Qian</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme by huichen
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
